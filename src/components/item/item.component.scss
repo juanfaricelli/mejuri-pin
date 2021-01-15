@@ -1,0 +1,50 @@
+.item-unit {
+  margin: 5px;
+  max-width: 170px;
+  position: relative;
+
+  img {
+    width: 12vw;
+    border-radius: 10%;
+    min-width: 150px;
+  }
+
+  span {
+    cursor:pointer
+  }
+
+  &__favourite,
+  &__description {
+    position: absolute;
+    visibility: hidden;
+  }
+
+  &__favourite {
+    right: 5px;
+    top: 2px;
+
+    &--bookmarked {
+      position: absolute;
+      right: 7px;
+      top: 10px;
+      :hover {
+        display: none;
+      }
+    }
+  }
+  &__description {
+    left: 10px;
+    bottom: 15px;
+    width: 90%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &:hover{
+    .item-unit__favourite,
+    .item-unit__description {
+      visibility: visible;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.items {
+  &__container {
+    &--main {
+      border-top: 1px solid #DDD;
+      padding-top: 10px;
+      display: flex;
+      justify-content: center;
+    }
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 5px;
+    max-width: 1080px;
+  }
+}
