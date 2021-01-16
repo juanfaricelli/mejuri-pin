@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/mejuri-pin/static/css/main.60a11e2e.chunk.css",
+    "main.js": "/mejuri-pin/static/js/main.633a3555.chunk.js",
+    "main.js.map": "/mejuri-pin/static/js/main.633a3555.chunk.js.map",
+    "runtime-main.js": "/mejuri-pin/static/js/runtime-main.b2d9a0bf.js",
+    "runtime-main.js.map": "/mejuri-pin/static/js/runtime-main.b2d9a0bf.js.map",
+    "static/js/2.219078d9.chunk.js": "/mejuri-pin/static/js/2.219078d9.chunk.js",
+    "static/js/2.219078d9.chunk.js.map": "/mejuri-pin/static/js/2.219078d9.chunk.js.map",
+    "static/js/3.6e7f7c53.chunk.js": "/mejuri-pin/static/js/3.6e7f7c53.chunk.js",
+    "static/js/3.6e7f7c53.chunk.js.map": "/mejuri-pin/static/js/3.6e7f7c53.chunk.js.map",
+    "index.html": "/mejuri-pin/index.html",
+    "static/css/main.60a11e2e.chunk.css.map": "/mejuri-pin/static/css/main.60a11e2e.chunk.css.map",
+    "static/js/2.219078d9.chunk.js.LICENSE.txt": "/mejuri-pin/static/js/2.219078d9.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b2d9a0bf.js",
+    "static/js/2.219078d9.chunk.js",
+    "static/css/main.60a11e2e.chunk.css",
+    "static/js/main.633a3555.chunk.js"
+  ]
+}
