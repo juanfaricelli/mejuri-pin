@@ -34,6 +34,7 @@ export const FiltersBar = () => {
         })
         .catch(error => {
           console.log(`getCategoryByKey Request Failed. ERROR: ${JSON.stringify(error)}`);
+          setSelectedCategory(parentFilters[0].id);
           setSubcategories([]);
           setSubcategoriesLoading(false);
         });
