@@ -1,61 +1,33 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 
 import { FavIcon } from '../icons/fav-icon.component';
 import { FavFilledIcon } from '../icons/fav-filled-icon.component';
+import { StyledButton } from '../styled-components/StyledButton';
 
 // NOTE: *.scss not used after styled-components
 // import './fav-button.component.scss'
 
-import { ItemsContext } from '../../context/items.context';
+export const FavButton = ({ likedItem, handlerOnClick }) => {
+  const [isLikedItem, setIsLikedItem] = useState(false);
 
-// NOTE: This could be imported into a different file.
-const StyledFavButton = styled.button`
-  width: 23px;
-  height: 23px;
-  background-color: white;
-  border: none;
-  border-radius: 50%;
-  position: relative;
-  &:active,
-  &:hover {
-    background-color: #D9D9D9;
-    border-radius: 50%;
-  }
-  &:focus,
-  &:focus-within {
-    outline: none;
-  }
-  svg {
-    position: absolute;
-    top: 3px;
-    left: 3px;
-  }
-`;
-
-export const FavButton = props => {
-  const { addItemLiked, removeItemLiked } = useContext(ItemsContext);
-  const [likedItem, setLikedItem] = useState(props.likedItem)
+  useEffect(() => {
+    setIsLikedItem(likedItem);
+  }, [likedItem]);
 
   const favoriteItem = () => {
-    const likedItemToggler = !likedItem;
-    setLikedItem(likedItemToggler);
-    if (likedItemToggler) {
-      addItemLiked(props.itemData);
-    } else {
-      removeItemLiked(props.itemId);
-    }
+    handlerOnClick();
+    setIsLikedItem(!isLikedItem);
   };
 
   return (
-    <StyledFavButton onClick={() => favoriteItem()}>
+    <StyledButton onClick={favoriteItem}>
       {
-        likedItem ?
+        isLikedItem ?
           <FavFilledIcon /> :
           <FavIcon color="#D4D2CB"/> 
       }
-    </StyledFavButton>
+    </StyledButton>
   );
 }
 

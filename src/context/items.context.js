@@ -74,12 +74,27 @@ export const ItemsProvider = ({children}) => {
     }
   }
 
+  const itemDetails = (itemData) => {
+    try {
+      dispatch({
+        type: actions.ITEM_DETAILS,
+        payload: itemData
+      });
+    } catch (error) {
+      dispatch({
+        type: actions.ERROR,
+        payload: error.response.data.error
+      });
+    }
+  }
+
   return (<ItemsContext.Provider value={{
     ...state,
     getItemsByCategory,
     listItems,
     addItemLiked,
     removeItemLiked,
+    itemDetails,
   }}>
     {children}
   </ItemsContext.Provider>);

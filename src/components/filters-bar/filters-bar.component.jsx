@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect, useContext } from 'react';
 import { CategoriesAPI } from '../../api/categories.api';
 
@@ -16,11 +15,12 @@ export const FiltersBar = () => {
   const [selectedCategory, setSelectedCategory] = useState(parentFilters[0].id);
   const [selectedSubCategory, setSelectedSubCategory] = useState('');
 
-  const { getItemsByCategory, listItems, itemsLiked } = useContext(ItemsContext);
+  const { getItemsByCategory, listItems, itemsLiked, itemDetails } = useContext(ItemsContext);
 
   useEffect(() => {
     setSelectedSubCategory('');
     setSubcategoriesLoading(true);
+    itemDetails();
     if (selectedCategory === parentFilters[0].id) {
       setSubcategories([]);
       setSubcategoriesLoading(false);
@@ -34,18 +34,22 @@ export const FiltersBar = () => {
         })
         .catch(error => {
           console.log(`getCategoryByKey Request Failed. ERROR: ${JSON.stringify(error)}`);
+          setSelectedCategory(parentFilters[0].id);
           setSubcategories([]);
           setSubcategoriesLoading(false);
         });
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedCategory]);
 
   useEffect(() => {
+    itemDetails();
     if (selectedSubCategory && selectedCategory !== parentFilters[0].id) {
       getItemsByCategory(selectedCategory, selectedSubCategory, subcategories);
     } else if (selectedCategory === parentFilters[0].id) {
       listItems(itemsLiked);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedSubCategory, selectedCategory, itemsLiked]);
 
   return(

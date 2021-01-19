@@ -5,13 +5,14 @@
       padding-top: 10px;
       display: flex;
       justify-content: center;
+      flex-direction: column;
     }
 
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 0 5px;
+    margin: auto;
     max-width: 1080px;
   }
 }

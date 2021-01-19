@@ -5,6 +5,7 @@ import { FavIcon } from '../fav-icon.component';
 import { MejuriLogo } from '../mejuri-logo.component';
 import { SpinnerCirclesIcon } from '../spinner-circles-icon.component';
 import { SpinnerThreeDotsIcon } from '../spinner-three-dots-icon.component';
+import { CloseIcon } from '../close-icon.component';
 
 test('FavFilledIcon renders ok', () => {
   render(<FavFilledIcon />);
@@ -33,5 +34,11 @@ test('SpinnerCirclesIcon renders ok', () => {
 test('SpinnerThreeDotsIcon renders ok', () => {
   render(<SpinnerThreeDotsIcon />);
   const iconElement = screen.getByTestId('spinner-three-dots-icon');
+  expect(iconElement).toBeInTheDocument();
+});
+
+test('CloseIcon renders ok', () => {
+  render(<CloseIcon />);
+  const iconElement = screen.getByTestId('close-icon');
   expect(iconElement).toBeInTheDocument();
 });

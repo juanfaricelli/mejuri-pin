@@ -2,6 +2,8 @@
   margin: 5px;
   max-width: 170px;
   position: relative;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 
   img {
     width: 12vw;
@@ -42,10 +44,13 @@
     text-overflow: ellipsis;
   }
 
-  &:hover{
+  &:hover {
     .item-unit__favourite,
     .item-unit__description {
       visibility: visible;
     }
+  }
+  &:focus {
+    outline: none;
   }
 }

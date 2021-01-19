@@ -36,6 +36,12 @@ export default (state, action) => {
         itemsLiked: itemsLikedArray,
         itemsLoading: false
       }
+    case actions.ITEM_DETAILS:
+      return {
+        ...state,
+        itemView: action.payload,
+        itemsLoading: false
+      }
     case actions.ERROR:
       return {
         ...state,

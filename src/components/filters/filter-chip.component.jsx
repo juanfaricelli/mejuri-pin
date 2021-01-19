@@ -23,7 +23,6 @@ export const FilterChip = ({id, name = 'Text', handlerOnClick = () => {}}) => {
         tabIndex="0"
         onClick={e => {
           e.stopPropagation();
-          setSelectedOption(!selected);
           handlerOnClick()
         }}>
         <span>{name}</span>
