@@ -16,7 +16,7 @@ export const Item = ({ itemData }) => {
   const [ loaded, setLoaded ] = useState(false);
   const [ likedItem, setLikedItem ] = useState(itemsLiked && itemsLiked.some(item => item.id === id));
 
-  const imgSrc = `${endpoints.items}${variant_images && variant_images[0].attachment_url_original}`;
+  const imgSrc = `${endpoints.items}${variant_images && variant_images[0].attachment_url_small}`;
 
   const handlerOnDoubleClick = () => {
     const likedItemToggler = !likedItem;

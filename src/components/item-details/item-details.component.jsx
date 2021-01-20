@@ -34,7 +34,7 @@ export const ItemDetails = ({ itemData }) => {
               key={`${itemView.name}_${index}`}
               title={itemView.name}
               alt={itemView.name}
-              src={`${endpoints.items}${image.attachment_url_original}`}/>)
+              src={`${endpoints.items}${image.attachment_url_large}`}/>)
           }
         </div>
         <div className="item-details__description-text">{itemView.name}</div>
