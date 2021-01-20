@@ -33,7 +33,7 @@ test('FilterChip renders selected ok', () => {
 
 test('FilterChip handles OnClick ok', () => {
   const handlerOnClick = jest.fn();
-  render(<FilterChip handlerOnClick={handlerOnClick}/>);
+  customRender(<FilterChip {...LIKED_ITEMS} handlerOnClick={handlerOnClick}/>);
   const element = screen.getByRole('button');
   expect(element).toBeInTheDocument();
   fireEvent.click(element);

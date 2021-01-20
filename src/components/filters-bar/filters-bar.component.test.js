@@ -16,7 +16,8 @@ const customRender = (ui) => {
         ]
       }
     ],
-    listItems: jest.fn()
+    listItems: jest.fn(),
+    itemDetails: jest.fn(),
   };
 
   return render(

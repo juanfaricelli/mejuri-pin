@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from 'react';
-import styled from 'styled-components';
 
 import { ItemsContext } from '../../context/items.context';
 import { endpoints } from '../../api/endpoints';
@@ -23,10 +22,9 @@ export const ItemDetails = ({ itemData }) => {
     itemDetails();
   }
 
-  // TODO: move this into another component
   const ItemDescription = () => {
     return (
-      <div className="item-details__description" onClick={(e) => e.stopPropagation()}>
+      <div className="item-details__description" onClick={(e) => e.stopPropagation()} data-testid="item-details-description">
         <div className="item-details__description-close">
           <StyledButton onClick={closeModal}><CloseIcon /></StyledButton>
         </div>
@@ -49,7 +47,6 @@ export const ItemDetails = ({ itemData }) => {
 
   return (
     <div className={`item-details__container${showDetails ? ' item-details__container--visible' : ''}`} data-testid="item-details">
-      {/* { showDetails && <ItemDetailsComponent />} */}
       <div className="item-details" onClick={closeModal}>
         {itemView && <ItemDescription />}
       </div>

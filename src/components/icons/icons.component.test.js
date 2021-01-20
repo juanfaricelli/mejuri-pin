@@ -1,11 +1,11 @@
 import { render, screen } from '@testing-library/react';
 
-import { FavFilledIcon } from '../fav-filled-icon.component';
-import { FavIcon } from '../fav-icon.component';
-import { MejuriLogo } from '../mejuri-logo.component';
-import { SpinnerCirclesIcon } from '../spinner-circles-icon.component';
-import { SpinnerThreeDotsIcon } from '../spinner-three-dots-icon.component';
-import { CloseIcon } from '../close-icon.component';
+import { FavFilledIcon } from './fav-filled-icon.component';
+import { FavIcon } from './fav-icon.component';
+import { MejuriLogo } from './mejuri-logo.component';
+import { SpinnerCirclesIcon } from './spinner-circles-icon.component';
+import { SpinnerThreeDotsIcon } from './spinner-three-dots-icon.component';
+import { CloseIcon } from './close-icon.component';
 
 test('FavFilledIcon renders ok', () => {
   render(<FavFilledIcon />);

@@ -31,7 +31,7 @@ test('FavButton renders with liked filled icon', () => {
 });
 
 test('renders FavButton click', () => {
-  customRender(<FavButton />);
+  customRender(<FavButton handlerOnClick={() => jest.fn()}/>);
   const buttonElement = screen.getByRole('button');
   fireEvent.click(buttonElement);
   expect(buttonElement).toContainElement(screen.getByTestId('fav-filled-icon'));
